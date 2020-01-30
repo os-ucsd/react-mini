@@ -21,7 +21,18 @@ class CheeseTypes extends React.Component{
         // currently only shows the first cheese's name (cheddar)
         return(
             <div>
-                <h1>{this.state.cheeseTypes[0].name}</h1>
+                <h1>Cheeses We Offer!</h1>
+                {
+                    this.state.cheeseTypes ?
+                        this.state.cheeseTypes.map(cheese => 
+                            <div>
+                                <h3>{cheese.name}</h3>
+                                <p>{cheese.description}</p>
+                                <p>{cheese.price}</p>
+                            </div>    
+                        )
+                        : null
+                }
             </div>
         );
     }
