@@ -3,11 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 
 import CheeseTypes from './components/CheeseTypes';
+import About from './components/About';
 
 function App() {
   return (
     <div className="App">
-      {/* put about page here */}
+      <About />
       <CheeseTypes />
       {/* put order form here */}
     </div>
