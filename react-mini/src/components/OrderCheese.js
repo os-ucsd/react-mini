@@ -14,14 +14,16 @@ class OrderCheese extends React.Component {
         }
     }
 
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+
     submitForm = (e) => {
         e.preventDefault();
         console.log(e.target)
         this.setState({
-            name: e.target[0].value,
-            address: e.target[2].value,
-            cheese_type: e.target[4].value,
-            quantity: e.target[6].value,
             showOrder: true
         })
     }
@@ -30,7 +32,7 @@ class OrderCheese extends React.Component {
         return(
             <div>
                 <h1>Order Some Cheese yo</h1>
-                <form noValidate autoComplete="off" onSubmit={this.submitForm}>
+                <form noValidate autoComplete="off" onSubmit={this.submitForm} onChange={this.handleChange}>
                     <TextField id="name" label="Name" variant="outlined" />
                     <br/>
                     <br/>
@@ -38,7 +40,7 @@ class OrderCheese extends React.Component {
                     <br/>
                     <br/>
                     <TextField
-                        id="cheese"
+                        id="cheese_type"
                         select
                         label="Type of Cheese"
                         SelectProps={{
@@ -46,6 +48,7 @@ class OrderCheese extends React.Component {
                         }}
                         helperText="Please select your cheese"
                         variant="outlined"
+                        defaultValue="cheddar"
                         >
                             <option>cheddar</option>
                             <option>parmesan</option>
