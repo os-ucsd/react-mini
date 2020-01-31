@@ -1,16 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import CheeseTypes from './components/CheeseTypes';
-import About from './components/About';
+import Featured from './components/Featured';
+import OrderCheese from './components/OrderCheese';
+
 
 function App() {
   return (
     <div className="App">
-      <About />
+      <Featured />
       <CheeseTypes />
       {/* put order form here */}
+      <OrderCheese />
     </div>
   );
 }
